@@ -8,8 +8,5 @@
 
 3. URLを共有する
 
-## ファイル構成
-├── index.html // メインページ ├── style.css // デザイン ├── script.js // 機能（読み上げなど） ├── message.txt // 表示するメッセージ（1行ずつ） ├── stamp.png // 回覧中スタンプ画像（任意）
-
 ## ライセンス
 [MIT] (LICENSE)
