@@ -41,6 +41,15 @@ h1 {
   padding-bottom: 0.5rem;
 }
 
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .button-row {
   display: flex;
   justify-content: center;
