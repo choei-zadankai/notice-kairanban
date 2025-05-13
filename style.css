@@ -1,3 +1,4 @@
+/* 全体背景：和紙風＋落ち着いた色 */
 body {
   margin: 0;
   padding: 0;
@@ -7,22 +8,10 @@ body {
   background-size: 400px;
 }
 
-body.large-text .message-line {
-  font-size: 2.2rem !important;
-}
-
-body.large-text .message-line.active {
-  font-size: 2.6rem !important;
-}
-
-body.large-text h1,
-body.large-text footer,
-body.large-text button {
-  font-size: 2rem !important;
-}
-
+/* コンテンツ囲い（回覧板っぽく） */
 .container {
   max-width: 700px;
+  width: 90vw;
   margin: 2rem auto;
   background-color: #fff;
   border: 6px double #a1887f;
@@ -33,31 +22,39 @@ body.large-text button {
   position: relative;
 }
 
+/* 見出し（h1） */
 h1 {
   font-size: 2rem;
   color: #3e2723;
   margin-bottom: 1rem;
   border-bottom: 2px dashed #8d6e63;
   padding-bottom: 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 1.3rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+/* スタンプ風アイコン */
+.stamp {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  opacity: 0.6;
+  transform: rotate(-15deg);
 }
 
+/* ボタンエリア */
 .button-row {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin: 1rem 0;
   flex-wrap: wrap;
+  margin: 1rem 0;
 }
 
+/* ボタンスタイル（緑系＋影＋角丸） */
 button {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -76,11 +73,14 @@ button:hover {
   cursor: pointer;
 }
 
+/* メッセージ表示部 */
 #messages {
   margin-top: 1rem;
   font-size: 1.5rem;
+  text-align: center;
 }
 
+/* 各行の表示 */
 .message-line {
   background: transparent;
   font-size: 1.6rem;
@@ -88,8 +88,10 @@ button:hover {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   border-radius: 8px;
+  word-break: break-word;
 }
 
+/* 読み上げ中の行を強調 */
 .message-line.active {
   background-color: #fff6c4;
   font-weight: bold;
@@ -97,17 +99,48 @@ button:hover {
   color: darkgreen;
 }
 
+/* フッター */
 footer {
   margin-top: 2rem;
   font-size: 0.9rem;
   color: #6d4c41;
 }
 
-.stamp {
-  position: absolute;
-  top: -30px;
-  right: -30px;
-  width: 100px;
-  opacity: 0.6;
-  transform: rotate(-15deg);
+/* フォント大きめモード（切り替え対応） */
+body.large-text .message-line {
+  font-size: 2.2rem !important;
+}
+
+body.large-text .message-line.active {
+  font-size: 2.6rem !important;
+}
+
+body.large-text h1,
+body.large-text footer,
+body.large-text button {
+  font-size: 2rem !important;
+}
+
+/* モバイル最適化：レスポンシブ対応 */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .message-line {
+    font-size: 1.2rem;
+  }
+
+  .message-line.active {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    min-width: 120px;
+    padding: 0.6rem 1.2rem;
+  }
 }
