@@ -3,7 +3,7 @@ let currentIndex = 0;
 let autoInterval;
 let currentSpeed = 0.9;
 
-// ✅ 読み替えマップ：読み間違いそうな単語だけ追加してね
+// ✅ 読み替えマップ：読み間違いそうな単語だけ追加
 const readingReplacements = {
   "町栄地区": "ちょうえいちく",
   "学会歌":"がっかいか",
